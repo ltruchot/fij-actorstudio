@@ -1,0 +1,10 @@
+<div *ngIf="actorsService.favorites.length === 0">
+  <em>Veuillez choisir vos acteurs favoris</em>
+</div>
+
+<ul class="list-group" *ngIf="actorsService.favorites.length !== 0">
+  <li class="list-group-item" *ngFor="let actor of actorsService.favorites">
+    {{ actor.name }}
+    <span (click)="confirm($event, actor)">[x]</span>
+  </li>
+</ul>

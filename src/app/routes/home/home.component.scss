@@ -1,0 +1,10 @@
+.fav {
+  width: 20px;
+  height: 20px;
+  background-image: url("/assets/star.png");
+  background-size: 100%;
+  display: inline-block;
+  &.selected {
+    background-image: url("/assets/star-selected.jpg");
+  }
+}

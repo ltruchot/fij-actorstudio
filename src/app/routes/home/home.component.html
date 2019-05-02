@@ -1,0 +1,27 @@
+<a routerLink="/fiche">fiche</a>
+<div *ngFor="let item of actors" class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters" (click)="goToFiche(item)">
+    <div class="col-md-4">
+      <img src="{{ 'assets/img/' + item.photo }}" class="card-img" alt="..." />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">
+          <span
+            class="{{
+              actorsService.isFavorite(item.id) ? 'fav selected' : 'fav'
+            }}"
+            (click)="actorsService.toggleFavorite($event, item)"
+          ></span
+          >{{ item.name }}
+        </h5>
+        <p class="card-text">
+          {{ item.description }}
+        </p>
+        <p class="card-text">
+          <small class="text-muted">{{ item.age }} ans déjà !</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
